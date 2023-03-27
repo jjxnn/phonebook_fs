@@ -115,9 +115,9 @@ const App = () => {
 
       //Delete phonebook T_T 
       const deletePerson = id => {
-        const filteredPerson = persons.filter(person => person.id === id)
-        const personName = filteredPerson[0].name
-        const personId = filteredPerson[0].id
+        const filteredPerson = persons.find(person => person.id === id)
+        const personName = filteredPerson.name
+        const personId = filteredPerson.id
 
         if (window.confirm(`Delete ${personName} ?`)) {
           phoneService.delPerson(personId).catch(error => {
